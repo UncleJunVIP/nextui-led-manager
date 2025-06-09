@@ -26,14 +26,7 @@ func (m LedSettings) Draw() (host interface{}, exitCode int, e error) {
 	items := []gabagool.ItemWithOptions{
 		{
 			Item: gabagool.MenuItem{
-				Text:     "Effect",
-				Selected: true,
-			},
-			Options: models.GetStandardEffectOptions(),
-		},
-		{
-			Item: gabagool.MenuItem{
-				Text:     "Color 1",
+				Text:     "Color",
 				Selected: false,
 			},
 			Options: []gabagool.Option{
@@ -47,27 +40,65 @@ func (m LedSettings) Draw() (host interface{}, exitCode int, e error) {
 		},
 		{
 			Item: gabagool.MenuItem{
-				Text:     "Color 2",
+				Text:     "Effect",
 				Selected: true,
 			},
-			Options: []gabagool.Option{
-				{
-					DisplayName: "#FF0000", // Default red color
-					Value:       sdl.Color{R: 255, G: 0, B: 0, A: 255},
-					Type:        gabagool.OptionTypeColorPicker,
-				},
-			},
-			SelectedOption: 0,
+			Options: models.GetStandardEffectOptions(),
 		},
 	}
 
-	// Define footer help items
-	footerItems := []gabagool.FooterHelpItem{
-		{ButtonName: "B", HelpText: "Back"},
-		{ButtonName: "Menu", HelpText: "Help"},
+	speedOptions := make([]gabagool.Option, 51) // 0, 100, 200, ..., 5000 (51 values)
+	for i := 0; i <= 50; i++ {
+		value := i * 100
+		speedOptions[i] = gabagool.Option{
+			DisplayName: fmt.Sprintf("%d", value),
+			Value:       value,
+			Type:        gabagool.OptionTypeStandard,
+		}
 	}
 
-	// Display the options list
+	items = append(items, gabagool.ItemWithOptions{
+		Item: gabagool.MenuItem{
+			Text:     "Speed",
+			Selected: false,
+		},
+		Options:        speedOptions,
+		SelectedOption: 10,
+	})
+
+	brightnessOptions := make([]gabagool.Option, 21)
+	for i := 0; i <= 20; i++ {
+		value := i * 5
+		brightnessOptions[i] = gabagool.Option{
+			DisplayName: fmt.Sprintf("%d%%", value),
+			Value:       value,
+			Type:        gabagool.OptionTypeStandard,
+		}
+	}
+
+	items = append(items, gabagool.ItemWithOptions{
+		Item: gabagool.MenuItem{
+			Text:     "Brightness",
+			Selected: false,
+		},
+		Options:        brightnessOptions,
+		SelectedOption: 10,
+	})
+
+	items = append(items, gabagool.ItemWithOptions{
+		Item: gabagool.MenuItem{
+			Text:     "Info Brightness",
+			Selected: false,
+		},
+		Options:        brightnessOptions,
+		SelectedOption: 10,
+	})
+
+	footerItems := []gabagool.FooterHelpItem{
+		{ButtonName: "B", HelpText: "Back"},
+		{ButtonName: "Start", HelpText: "Save"},
+	}
+
 	result, err := gabagool.OptionsList("Top Bar Settings", items, footerItems)
 	if err != nil {
 		fmt.Println("Error:", err)
