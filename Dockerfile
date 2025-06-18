@@ -13,6 +13,6 @@ COPY go.mod go.sum* ./
 RUN GOWORK=off go mod download
 
 COPY . .
-RUN GOWORK=off go build -gcflags="all=-N -l" -v
+RUN GOWORK=off go build -gcflags="all=-N -l" -v -o led-manager
 
 CMD ["/bin/bash"]

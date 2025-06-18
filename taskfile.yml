@@ -25,7 +25,7 @@ tasks:
       - rm -rf "build/LED Manager.pak" || true
       - mkdir -p "build/LED Manager.pak"
       - mkdir -p "build/LED Manager.pak/resources/lib"
-      - cp build/led-control launch.sh README.md LICENSE pak.json "build/LED Manager.pak"
+      - cp build/led-manager launch.sh README.md LICENSE pak.json "build/LED Manager.pak"
       - cp -R build/lib "build/LED Manager.pak/resources"
     silent: true
 

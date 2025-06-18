@@ -8,8 +8,8 @@ import (
 type LED struct {
 	DisplayName    string
 	InternalName   string
-	Color1         int
-	Color2         int
+	Color1         string
+	Color2         string
 	Brightness     int
 	InfoBrightness int
 	Effect         int
