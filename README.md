@@ -17,11 +17,26 @@
 
 ---
 
+## How do I install LED Manager?
+
+*Preferred Method:* [NextUI Pak Store](https://github.com/UncleJunVIP/nextui-pak-store)
+
+1. Own a TrimUI Brick or Smart Pro and have a SD Card with NextUI configured.
+2. Download the latest LED Manager release from this repo.
+3. Unzip the release download.
+4. With your device powered off, eject the SD Card and connect it to your computer.
+5. Copy the entire LED Manager.pak file to `SD_ROOT/Tools/tg5040`.
+6. Reinsert your SD Card into your device.
+7. Launch `LED Manager` from the `Tools` menu and enjoy!
+
+---
+
 ## Like this Pak?
 
 You might be interested in my other NextUI Paks!
 
-[Pak Store](https://github.com/UncleJunVIP/nextui-pak-store) - install, update and manage the amazing work from the community right on device
+[Pak Store](https://github.com/UncleJunVIP/nextui-pak-store) - install, update and manage the amazing work from the
+community right on device
 
 [Mortar](https://github.com/UncleJunVIP/Mortar) - a ROM download client that supports RomM and Megathread
 

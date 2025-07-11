@@ -1,30 +1,14 @@
 {
-  "name": "Mortar",
-  "version": "v2.3.1",
+  "name": "LED Manager",
+  "version": "v1.0.0",
   "type": "TOOL",
-  "description": "ROM Downloader for RomM and Megathread",
+  "description": "A enhanced LED configuration tool.",
   "author": "K-Wall",
-  "repo_url": "https://github.com/UncleJunVIP/Mortar",
-  "release_filename": "Mortar.pak.zip",
-  "banners": {
-    "BRICK": ".github/resources/banner.png"
-  },
+  "repo_url": "https://github.com/UncleJunVIP/nextui-led-manager",
+  "release_filename": "LED.Manager.pak.zip",
   "changelog": {
-    "v2.3.1": "Added a setting to unzip ROM archive after download.",
-    "v2.2.1": "Fix for a small bug in the fixed ROM folder discovery code.",
-    "v2.2.0": "A quick fix that should address the weird ROM folder discovery issue. Fingers crossed!",
-    "v2.1.1": "Upgraded the UI Library Dependency which brings system theme consistency and a new parallel download manager."
+    "v1.0.0": "The initial release! Warning there may be bugs!"
   },
-  "screenshots": [
-    ".github/resources/screenshots/main_menu.jpg",
-    ".github/resources/screenshots/settings.jpg",
-    ".github/resources/screenshots/platforms.jpg",
-    ".github/resources/screenshots/games_list.jpg",
-    ".github/resources/screenshots/search.jpg",
-    ".github/resources/screenshots/search_results.jpg",
-    ".github/resources/screenshots/download.jpg",
-    ".github/resources/screenshots/art_download.jpg"
-  ],
   "platforms": [
     "tg5040"
   ],
