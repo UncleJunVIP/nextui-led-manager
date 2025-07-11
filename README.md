@@ -1,0 +1,38 @@
+<div align="center">
+
+<img src=".github/resources/led-manager-logo.png" width="auto" alt="LED Manager wordmark">
+<h3 style="font-size: 25px;">
+    A enhanced LED configuration tool <a href="https://nextui.loveretro.games" target="_blank">NextUI</a>
+</h3>
+
+## [Download this in Pak Store!](https://github.com/UncleJunVIP/nextui-pak-store)
+
+![GitHub License](https://img.shields.io/github/license/UncleJunVip/nextui-led-manager?style=for-the-badge)
+![GitHub Release](https://img.shields.io/github/v/release/UncleJunVIP/nextui-led-manager?sort=semver&style=for-the-badge)
+![GitHub Repo stars](https://img.shields.io/github/stars/UncleJunVip/nextui-led-manager?style=for-the-badge)
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/UncleJunVIP/nextui-led-manager/total?style=for-the-badge&label=Total%20Downloads)
+
+
+</div>
+
+---
+
+## Like this Pak?
+
+You might be interested in my other NextUI Paks!
+
+[Pak Store](https://github.com/UncleJunVIP/nextui-pak-store) - install, update and manage the amazing work from the community right on device
+
+[Mortar](https://github.com/UncleJunVIP/Mortar) - a ROM download client that supports RomM and Megathread
+
+[Game Manager](https://github.com/UncleJunVIP/nextui-game-manager) - manage your ROM library right on device
+
+---
+
+## Be a friend, tell a friend something nice; it might change their life!
+
+I've spent a good chunk of time building this Pak.
+
+If you feel inclined to pay it forward, go do something nice for someone! ❤️
+
+✌🏻
