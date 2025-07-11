@@ -25,15 +25,7 @@ func init() {
 
 	var err error
 
-	settingsFile := "/mnt/SDCARD/.userdata/shared/ledsettings.txt"
-
-	if functions.IsBrick {
-		settingsFile = "/mnt/SDCARD/.userdata/shared/ledsettings_brick.txt"
-	} else if functions.IsDev() {
-		settingsFile = "dev/ledsettings.txt"
-	}
-
-	settings, err = functions.LoadLEDSettings(settingsFile)
+	settings, err = functions.LoadLEDSettings()
 
 	if err != nil {
 		fmt.Println("Error loading LED settings:", err)
@@ -71,6 +63,15 @@ func main() {
 		case models.ScreenNames.LedSettings:
 			switch code {
 			case 0:
+				led := res.(models.LED)
+				settings[led.InternalName] = led
+
+				var leds []models.LED
+				for _, v := range settings {
+					leds = append(leds, v)
+				}
+
+				functions.WriteLEDSettings(leds)
 			}
 
 			screen = ui.InitMainMenu()

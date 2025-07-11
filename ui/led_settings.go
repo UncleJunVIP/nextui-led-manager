@@ -12,6 +12,7 @@ import (
 	"nextui-led-control/models"
 	"qlova.tech/sum"
 	"strconv"
+	"strings"
 )
 
 type LedSettings struct {
@@ -34,11 +35,9 @@ func (m LedSettings) Draw() (settings interface{}, exitCode int, e error) {
 	logger.Debug("Drawing LED Settings")
 
 	effectOptions := models.GetStandardEffectOptions(func(newValue interface{}) {
-		fmt.Println("New effect: ", newValue)
-		// Update LED effect and apply changes
+		fmt.Println(fmt.Sprintf("New effect: %d | %s", newValue, models.EffectNames[newValue.(int)-1]))
 		if !functions.IsDev() {
-			effect := newValue.(models.EffectType)
-			m.LED.Effect = int(effect)
+			m.LED.Effect = newValue.(int)
 			functions.SetEffect(m.LED)
 		}
 	})
@@ -192,14 +191,26 @@ func (m LedSettings) Draw() (settings interface{}, exitCode int, e error) {
 	result, err := gabagool.OptionsList(fmt.Sprintf("%s Settings", title), items, footerItems)
 	if err != nil {
 		fmt.Println("Error:", err)
-		return
+		return nil, 1, nil
 	}
 
 	if !result.IsSome() || result.Unwrap().Canceled {
-		return
+		return nil, 1, nil
 	}
 
 	selections := result.Unwrap()
 
-	return selections, 0, nil
+	newSettings := models.LED{
+		DisplayName:    m.LED.DisplayName,
+		InternalName:   m.LED.InternalName,
+		Color1:         strings.ReplaceAll(selections.Items[0].Options[0].DisplayName, "#", ""),
+		Color2:         strings.ReplaceAll(selections.Items[0].Options[0].DisplayName, "#", ""),
+		Effect:         selections.Items[1].SelectedOption + 1,
+		Speed:          selections.Items[2].SelectedOption * 100,
+		Brightness:     selections.Items[3].SelectedOption * 5,
+		InfoBrightness: selections.Items[4].SelectedOption * 5,
+		Trigger:        1,
+	}
+
+	return newSettings, 0, nil
 }
