@@ -3,7 +3,7 @@ module nextui-led-control
 go 1.24
 
 require (
-	github.com/UncleJunVIP/gabagool v0.0.53
+	github.com/UncleJunVIP/gabagool v0.0.54
 	github.com/UncleJunVIP/nextui-pak-shared-functions v1.8.0
 	github.com/veandco/go-sdl2 v0.4.40
 	go.uber.org/zap v1.27.0
