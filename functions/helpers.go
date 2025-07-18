@@ -12,6 +12,11 @@ func IsDev() bool {
 	return os.Getenv("ENVIRONMENT") == "DEV"
 }
 
+func IsKidMode() bool {
+	ok, err := strconv.ParseBool(os.Getenv("KID_MODE"))
+	return err == nil && ok
+}
+
 func GetSettingsFile() string {
 	settingsFile := "/mnt/SDCARD/.userdata/shared/ledsettings.txt"
 	if IsBrick {

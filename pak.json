@@ -1,12 +1,13 @@
 {
   "name": "LED Manager",
-  "version": "v1.0.0",
+  "version": "v1.1.0",
   "type": "TOOL",
   "description": "A enhanced LED configuration tool.",
   "author": "K-Wall",
   "repo_url": "https://github.com/UncleJunVIP/nextui-led-manager",
   "release_filename": "LED.Manager.pak.zip",
   "changelog": {
+    "v1.1.0": "Added a \"Kid Mode\" environment variable to be uncommented in launch.sh",
     "v1.0.0": "The initial release! Warning there may be bugs!"
   },
   "platforms": [

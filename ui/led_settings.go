@@ -173,13 +173,15 @@ func (m LedSettings) Draw() (settings interface{}, exitCode int, e error) {
 		}
 	}
 
-	items = append(items, gabagool.ItemWithOptions{
-		Item: gabagool.MenuItem{
-			Text: "Info Brightness",
-		},
-		Options:        infoBrightnessOptions,
-		SelectedOption: infoBrightnessIndex,
-	})
+	if !functions.IsKidMode() {
+		items = append(items, gabagool.ItemWithOptions{
+			Item: gabagool.MenuItem{
+				Text: "Info Brightness",
+			},
+			Options:        infoBrightnessOptions,
+			SelectedOption: infoBrightnessIndex,
+		})
+	}
 
 	footerItems := []gabagool.FooterHelpItem{
 		{ButtonName: "B", HelpText: "Back"},
@@ -200,6 +202,12 @@ func (m LedSettings) Draw() (settings interface{}, exitCode int, e error) {
 
 	selections := result.Unwrap()
 
+	newInfoBrightness := 50
+
+	if !functions.IsKidMode() {
+		newInfoBrightness = selections.Items[4].SelectedOption * 5
+	}
+
 	newSettings := models.LED{
 		DisplayName:    m.LED.DisplayName,
 		InternalName:   m.LED.InternalName,
@@ -208,7 +216,7 @@ func (m LedSettings) Draw() (settings interface{}, exitCode int, e error) {
 		Effect:         selections.Items[1].SelectedOption + 1,
 		Speed:          selections.Items[2].SelectedOption * 100,
 		Brightness:     selections.Items[3].SelectedOption * 5,
-		InfoBrightness: selections.Items[4].SelectedOption * 5,
+		InfoBrightness: newInfoBrightness,
 		Trigger:        1,
 	}
 
