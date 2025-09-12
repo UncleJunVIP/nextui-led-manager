@@ -2,17 +2,17 @@ package ui
 
 import (
 	"fmt"
+	"nextui-led-control/functions"
+	"nextui-led-control/models"
+	"strconv"
+	"strings"
+
 	"github.com/UncleJunVIP/gabagool/pkg/gabagool"
 	"github.com/UncleJunVIP/nextui-pak-shared-functions/common"
 	"github.com/veandco/go-sdl2/sdl"
-	"go.uber.org/zap"
 	"golang.org/x/text/cases"
 	"golang.org/x/text/language"
-	"nextui-led-control/functions"
-	"nextui-led-control/models"
 	"qlova.tech/sum"
-	"strconv"
-	"strings"
 )
 
 type LedSettings struct {
@@ -73,10 +73,10 @@ func (m LedSettings) Draw() (settings interface{}, exitCode int, e error) {
 					OnUpdate: func(newValue interface{}) {
 						color := newValue.(sdl.Color)
 						hexCode := fmt.Sprintf("%02X%02X%02X", color.R, color.G, color.B)
-						logger.Debug("New Color", zap.String("hexCode", hexCode))
+						logger.Debug("New Color", "hexCode", hexCode)
 
 						if !functions.IsDev() {
-							logger.Debug("Setting Color", zap.String("hexCode", hexCode))
+							logger.Debug("Setting Color", "hexCode", hexCode)
 							m.LED.Color1 = hexCode
 							functions.SetColor(m.LED)
 						}

@@ -2,12 +2,13 @@ package main
 
 import (
 	"fmt"
-	gaba "github.com/UncleJunVIP/gabagool/pkg/gabagool"
-	"github.com/UncleJunVIP/nextui-pak-shared-functions/common"
 	"nextui-led-control/functions"
 	"nextui-led-control/models"
 	"nextui-led-control/ui"
 	"os"
+
+	gaba "github.com/UncleJunVIP/gabagool/pkg/gabagool"
+	"github.com/UncleJunVIP/nextui-pak-shared-functions/common"
 )
 
 var settings map[string]models.LED

@@ -1,9 +1,10 @@
 package ui
 
 import (
-	gaba "github.com/UncleJunVIP/gabagool/pkg/gabagool"
 	"nextui-led-control/functions"
 	"nextui-led-control/models"
+
+	gaba "github.com/UncleJunVIP/gabagool/pkg/gabagool"
 	"qlova.tech/sum"
 )
 

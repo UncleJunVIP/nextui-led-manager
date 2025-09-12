@@ -2,11 +2,11 @@ package functions
 
 import (
 	"fmt"
-	"github.com/UncleJunVIP/nextui-pak-shared-functions/common"
-	"go.uber.org/zap"
 	"nextui-led-control/models"
 	"os"
 	"strings"
+
+	"github.com/UncleJunVIP/nextui-pak-shared-functions/common"
 )
 
 var IsBrick bool
@@ -158,7 +158,7 @@ func SetColor(led models.LED) {
 
 	file, err := os.OpenFile(filePath, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0644)
 	if err != nil {
-		logger.Error("Unable to save LED color", zap.Error(err))
+		logger.Error("Unable to save LED color", "error", err)
 	}
 
 	if err == nil {
