@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log/slog"
 	"nextui-led-control/functions"
 	"nextui-led-control/models"
 	"nextui-led-control/ui"
@@ -15,9 +16,11 @@ var settings map[string]models.LED
 
 func init() {
 	common.SetLogLevel("DEBUG")
-	gaba.InitSDL(gaba.GabagoolOptions{
+	gaba.InitSDL(gaba.Options{
 		WindowTitle:    "LED Manager",
 		ShowBackground: true,
+		LogFilename:    "led_manager.log",
+		LogLevel:       slog.LevelDebug,
 	})
 
 	logger := common.GetLoggerInstance()
