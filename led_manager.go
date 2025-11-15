@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"log/slog"
 	"nextui-led-control/functions"
 	"nextui-led-control/models"
 	"nextui-led-control/ui"
@@ -20,7 +19,6 @@ func init() {
 		WindowTitle:    "LED Manager",
 		ShowBackground: true,
 		LogFilename:    "led_manager.log",
-		LogLevel:       slog.LevelDebug,
 	})
 
 	logger := common.GetLoggerInstance()

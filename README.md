@@ -38,7 +38,7 @@ You might be interested in my other NextUI Paks!
 [Pak Store](https://github.com/UncleJunVIP/nextui-pak-store) - install, update and manage the amazing work from the
 community right on device
 
-[Mortar](https://github.com/UncleJunVIP/Mortar) - a ROM download client that supports RomM and Megathread
+[Mortar](https://github.com/UncleJunVIP/Mortar) - a ROM download client
 
 [Game Manager](https://github.com/UncleJunVIP/nextui-game-manager) - manage your ROM library right on device
 
