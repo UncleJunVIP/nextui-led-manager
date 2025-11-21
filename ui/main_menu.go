@@ -4,7 +4,7 @@ import (
 	"nextui-led-control/functions"
 	"nextui-led-control/models"
 
-	gaba "github.com/UncleJunVIP/gabagool/pkg/gabagool"
+	"github.com/UncleJunVIP/gabagool/pkg/gabagool"
 	"qlova.tech/sum"
 )
 
@@ -20,7 +20,7 @@ func (m MainMenu) Name() sum.Int[models.ScreenName] {
 }
 
 func (m MainMenu) Draw() (host interface{}, exitCode int, e error) {
-	brickMenuItems := []gaba.MenuItem{
+	brickMenuItems := []gabagool.MenuItem{
 		{
 			Text:               "Function Key 1",
 			Selected:           false,
@@ -51,7 +51,7 @@ func (m MainMenu) Draw() (host interface{}, exitCode int, e error) {
 		},
 	}
 
-	smartProMenuItems := []gaba.MenuItem{
+	smartProMenuItems := []gabagool.MenuItem{
 		{
 			Text:               "Left Stick",
 			Selected:           false,
@@ -80,14 +80,14 @@ func (m MainMenu) Draw() (host interface{}, exitCode int, e error) {
 		menuItems = smartProMenuItems
 	}
 
-	options := gaba.DefaultListOptions("LED Manager", menuItems)
+	options := gabagool.DefaultListOptions("LED Manager", menuItems)
 	options.EnableAction = true
-	options.FooterHelpItems = []gaba.FooterHelpItem{
+	options.FooterHelpItems = []gabagool.FooterHelpItem{
 		{ButtonName: "B", HelpText: "Quit"},
 		{ButtonName: "A", HelpText: "Select"},
 	}
 
-	selection, err := gaba.List(options)
+	selection, err := gabagool.List(options)
 	if err != nil {
 		return nil, -1, err
 	}

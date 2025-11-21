@@ -14,12 +14,13 @@ import (
 var settings map[string]models.LED
 
 func init() {
-	gaba.SetRawLogLevel("DEBUG")
-	gaba.InitSDL(gaba.Options{
+	gaba.Init(gaba.Options{
 		WindowTitle:    "LED Manager",
 		ShowBackground: true,
 		LogFilename:    "led_manager.log",
 	})
+
+	gaba.SetRawLogLevel("DEBUG")
 
 	logger := common.GetLoggerInstance()
 
@@ -38,7 +39,7 @@ func init() {
 }
 
 func cleanup() {
-	gaba.CloseSDL()
+	gaba.Close()
 }
 
 func main() {
